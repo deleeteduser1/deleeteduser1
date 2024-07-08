@@ -1,6 +1,6 @@
 local function handleLogMessage(message, messageType)
     if message:find("Finished") then
-        -- Kill the player's character
+        
         local player = game.Players.LocalPlayer
         if player and player.Character and player.Character:FindFirstChild("Humanoid") then
             player.Character.Humanoid.Health = 0
