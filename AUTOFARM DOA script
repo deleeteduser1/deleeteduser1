@@ -444,4 +444,4 @@ local function onCharacter(Character)
     end
 end
 LocalPlayer.CharacterAdded:Connect(onCharacter)
-print("Loaded! This original version is a co-op between Koriyuka#4800 & Stefanuk12#5820")
+print("Loaded! Remember my name!")
