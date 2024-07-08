@@ -1,0 +1,20 @@
+local function handleLogMessage(message, messageType)
+    if message:find("Finished") then
+        -- Kill the player's character
+        local player = game.Players.LocalPlayer
+        if player and player.Character and player.Character:FindFirstChild("Humanoid") then
+            player.Character.Humanoid.Health = 0
+        end
+    end
+end
+ 
+game:GetService("LogService").MessageOut:Connect(handleLogMessage)
+ 
+local function checkConsole()
+    local logs = game:GetService("LogService"):GetLogHistory()
+    for _, log in pairs(logs) do
+        handleLogMessage(log.message, log.messageType)
+    end
+end
+ 
+checkConsole()
