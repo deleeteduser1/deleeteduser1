@@ -450,10 +450,8 @@ local function handleLogMessage(message, messageType)
     if message:find("Finished") then
         local player = game.Players.LocalPlayer
         if player and player.Character and player.Character:FindFirstChild("Humanoid") then
-            wait(10) 
-            player.Character.Humanoid.Health = 0
             
-            
+
             wait(10)
             local character = player.Character or player.CharacterAdded:Wait()
             character:WaitForChild("HumanoidRootPart")
